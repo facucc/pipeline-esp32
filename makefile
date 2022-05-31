@@ -4,7 +4,7 @@ CC = gcc
 #You must use this option when compiling the source files you want data about, 
 #and you must also use it when linking.
 
-all: folders main tests
+all: folders main #tests
 
 install:
 #sudo apt install netpbm -y
@@ -15,8 +15,8 @@ folders:
 main: ./src/main.c ./src/welcome.c
 	$(CC) $(CFLAGS) ./src/main.c ./src/welcome.c -o ./bin/main
 
-tests: ./tests/test_main.c
-	$(CC) $(CFLAGS) ./tests/test_main.c -o ./bin/test_main
+#tests: ./tests/test_main.c
+#	$(CC) $(CFLAGS) ./tests/test_main.c -o ./bin/test_main
 
 clean:
 	rm -rf ./bin *.o
