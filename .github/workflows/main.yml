@@ -35,5 +35,5 @@ jobs:
       run: platformio run
 
     # check if version in code is greator than version in JSON response, then deploy.
-    - name: Upload .bin file and modify json file.
-      run: python ./.github/scripts/check_ver_and_deploy.py
+    #- name: Upload .bin file and modify json file.
+    #  run: python ./.github/scripts/check_ver_and_deploy.py
