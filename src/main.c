@@ -16,6 +16,7 @@ int app_main() {
     gpio_config(&io_conf);
 
     // Main loop
+    //TEST WORKFLOW
     while(true) {
         gpio_set_level(LED, 0);
         vTaskDelay(500 / portTICK_RATE_MS);
