@@ -4,6 +4,7 @@
 #include <freertos/task.h>
 
 #define LED 2 // LED connected to GPIO2
+#define DELAY 1000 // milliseconds to delay blink
 
 int app_main() {
     // Configure pin
@@ -18,8 +19,8 @@ int app_main() {
     // Main loop
     while(true) {
         gpio_set_level(LED, 0);
-        vTaskDelay(500 / portTICK_RATE_MS);
+        vTaskDelay(pdMS_TO_TICKS(DELAY));
         gpio_set_level(LED, 1);
-        vTaskDelay(500 / portTICK_RATE_MS);
+        vTaskDelay(pdMS_TO_TICKS(DELAY));
     }
 }
