@@ -32,7 +32,7 @@ jobs:
         pip install PyGithub
         
     - name: Run platformIO
-      run: platformio run --target --environment nodemcu-32s
+      run: platformio run  --environment nodemcu-32s
     #  run: pio run --target upload --upload-port /dev/ttyUSB0 --environment nodemcu-32s
 
     # check if version in code is greator than version in JSON response, then deploy.
