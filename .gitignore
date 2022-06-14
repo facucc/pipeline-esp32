@@ -3,3 +3,4 @@
 /bin
 .pio
 sdkconfig.nodemcu-32s
+.env
