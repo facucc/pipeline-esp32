@@ -19,8 +19,8 @@ int app_main() {
     //TEST WORKFLOW2
     while(true) {
         gpio_set_level(LED, 0);
-        vTaskDelay(1000 / portTICK_RATE_MS);
+        vTaskDelay(1500 / portTICK_RATE_MS);
         gpio_set_level(LED, 1);
-        vTaskDelay(1000 / portTICK_RATE_MS);
+        vTaskDelay(1500 / portTICK_RATE_MS);
     }
 }
