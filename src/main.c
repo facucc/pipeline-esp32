@@ -4,7 +4,7 @@
 #include <freertos/task.h>
 
 #define LED 2 // LED connected to GPIO2
-#define DELAY 1000 // milliseconds to delay blink
+#define DELAY 3000 // milliseconds to delay blink
 
 int app_main() {
     // Configure pin
