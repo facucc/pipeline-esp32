@@ -17,7 +17,8 @@ int app_main() {
     gpio_config(&io_conf);
 
     // Main loop
-    while(true) {
+    //TEST WORKFLOW2
+    while(true){
         gpio_set_level(LED, 0);
         vTaskDelay(pdMS_TO_TICKS(DELAY));
         gpio_set_level(LED, 1);
