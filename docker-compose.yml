@@ -12,6 +12,6 @@ services:
         GITHUB_ACCESS_TOKEN: ${GITHUB_ACCESS_TOKEN}
       volumes:
         - /var/run/docker.sock:/var/run/docker.sockz
-        - ./.pio:/home/runner/_work/pipeline-esp32/pipeline-esp32/.pio
+        #- ./.pio:/home/runner/_work/pipeline-esp32/pipeline-esp32/.pio
       devices:
         - '/dev/ttyUSB0:/dev/ttyUSB0'
