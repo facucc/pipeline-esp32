@@ -17,8 +17,8 @@ services:
         - persistent:/opt/hostedtoolcache
       devices:
         - '/dev/ttyUSB0:/dev/ttyUSB0'
-networks:
-  my-network:
-    driver: bridge
+#networks:
+  #my-network:
+    #driver: bridge
 volumes:
   persistent:
