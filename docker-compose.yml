@@ -13,5 +13,12 @@ services:
       volumes:
         - /var/run/docker.sock:/var/run/docker.sockz
         #- ./.pio:/home/runner/_work/pipeline-esp32/pipeline-esp32/.pio
+        - persistent:/home/runner/_work/pipeline-esp32/pipeline-esp32/.pio
+        - persistent:/opt/hostedtoolcache
       devices:
         - '/dev/ttyUSB0:/dev/ttyUSB0'
+networks:
+  my-network:
+    driver: bridge
+volumes:
+  persistent:
