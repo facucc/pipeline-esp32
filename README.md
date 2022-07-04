@@ -45,7 +45,7 @@ sudo docker-compose up
 The initialization of the container will take about 4 minutes. In case of a misconfiguration with the access token, the runner will tell you there is an error with the GitHub authentication.
 
 ## Workflow
-To trigger the workflow you need to push changes in the /src folder. Our recommendation is to change only the LED blink frequency, and keep the code as it is. Change the define DELAY in line 7 of /src/main.c to a noticeable value you can distinguish in the LED on the board. For example, toggle between 200 and 2000 ms of DELAY. After pushing the changes, te code will compile, test and upload to the board automatically. This is the advantage of DevOps, saving time and be less error prone.
+To trigger the workflow you need to push changes in the **/src** folder. Our recommendation is to change only the LED blink frequency, and keep the code as it is. Change the define DELAY in line 7 of **/src/main.c** to a noticeable value you can distinguish in the LED on the board. For example, toggle between 200 and 2000 ms of DELAY. After pushing the changes, the code will compile, test and upload to the board automatically. This is the advantage of DevOps, saving time and being less error prone.
 
 ## References
 - [Docker](https://www.docker.com)
