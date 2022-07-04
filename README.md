@@ -16,7 +16,7 @@ sudo apt install docker-compose
 ```
 For Windows (or other OS) please refer to the [Docker Documentation](https://docs.docker.com/desktop/windows/install).
 
-## Credentials
+### Credentials
 For security reasons you have to set up a GitHub Access Token, which grants you permissions over your GitHub account to allow a self-hosted runner that we will use to run the pipeline jobs.
 Create a file called ".env" in your repository root folder. Note that this file is included in the .gitignore, because your credentials shouldn't be shared. In the file you should add:
 ```
@@ -27,13 +27,25 @@ To create a new GitHub Access Token, go to Settings, Developer Settings (at the 
 
 ![DevSettings](/img/GithubDevSettings.jpg)
 
-## Self-Hosted Containerized Runner
+### ESP32 USB Connection
+To upload code to the ESP32 board consider:
+- If you are using Windows or a virtual machine, it is needed to press the BOOT button whilst the program is being uploaded, otherwise the system will have an error telling you the board is not in flash mode.
+- It is highly recommended to use Linux, you don't need to press the button, but it is needed to give write permissions to the USB port, preferably the USB 0.
+- To give permissions to the USB ports: (Reboot needed)
+```
+sudo usermod -a -G dialout $USER
+```
+
+### Self-Hosted Containerized Runner
 A Runner is a server which runs the actions (or jobs) included in the workflow of this repository, found in **.github/workflows** folder. A self-hosted runner means it will run on your computer, containerized because we will use a Docker container to keep all the dependencies as simple as possible.
 To start the runner, open a terminal on the root of the repository and run this command:
 ```
 sudo docker-compose up
 ```
 The initialization of the container will take about 4 minutes. In case of a misconfiguration with the access token, the runner will tell you there is an error with the GitHub authentication.
+
+## Workflow
+To trigger the workflow you need to push changes in the /src folder. Our recommendation is to change only the LED blink frequency, and keep the code as it is. Change the define DELAY in line 7 of /src/main.c to a noticeable value you can distinguish in the LED on the board. For example, toggle between 200 and 2000 ms of DELAY. After pushing the changes, te code will compile, test and upload to the board automatically. This is the advantage of DevOps, saving time and be less error prone.
 
 ## References
 - [Docker](https://www.docker.com)
