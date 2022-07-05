@@ -23,30 +23,30 @@ Cree un archivo llamado ".env" en la carpeta raíz de su repositorio. Nótese qu
 RUNNER_REPOSITORY_URL=URL of your Forked Repository
 GITHUB_ACCESS_TOKEN=Your Token
 ```
-To create a new GitHub Access Token, go to Settings, Developer Settings (at the bottom), Personal Access Tokens, and click on **Generate new token**. You will get a long sequence of characters, copy it and paste it on the .env file as indicated before. You won't be able to retrieve this token, so if you lose your .env file and need the token again, you will need to create a new one and replace it.
+Para crear un nuevo GitHub Access Token, vaya a Ajustes, Ajustes de Desarrollador (Developer Settings, abajo), Personal Access Tokens, y clickee en **Generar nuevo token**. Obtendrá una secuencia larga de caracteres, cópiela y péguela en el archivo .env en los campos indicados previamente. No podrá recuperar este token, así que si pierde su archivo .env y necesita el token, necesitará crear un nuevo token y reemplazarlo.
 
 ![DevSettings](/img/GithubDevSettings.jpg)
 
 ### ESP32 USB Connection
-To upload code to the ESP32 board consider:
-- If you are using Windows or a virtual machine, it is needed to press the BOOT button whilst the program is being uploaded, otherwise the system will have an error telling you the board is not in flash mode.
-- It is highly recommended to use Linux, you don't need to press the button, but it is needed to give write permissions to the USB port, preferably the USB 0.
-- To give permissions to the USB ports: (Reboot needed)
+Para cargar código al ESP32 considere:
+- Si está usando Windows o una máquina virtual, se necesita presionar el botón BOOT mientras el programa está siendo cargado, de otro modo el sistema avisará con un error que indica que la placa no está en modo de flasheo.
+- Se recomienda usar Linux, ya que no se necesita presionar el botón BOOT, pero es necesario darle permisos de escritura al puerto USB, de preferencia al USB 0.
+- Para darle permisos de escritura a los puertos USB: (Reinicio necesario)
 ```
 sudo usermod -a -G dialout $USER
 ```
 
 ### Self-Hosted Containerized Runner
-A Runner is a server which runs the actions (or jobs) included in the workflow of this repository, found in **.github/workflows** folder. A self-hosted runner means it will run on your computer, containerized because we will use a Docker container to keep all the dependencies as simple as possible.
-To start the runner, open a terminal on the root of the repository and run this command:
+Un Runner es un servidor que ejecuta las acciones (o jobs) incluídas en el workflow de este repositorio, que se encuentra en la carpeta **.github/workflow**. Un runner self-hosted significa que se ejecutará de forma local en su computadora, y conteinerizado significa que se usa un contenedor de Docker para mantener las dependencias lo más simple posible.
+Para ejecutar el runner, abra una terminal en la carpeta raíz del repositorio y corra este comando:
 ```
 sudo docker-compose up
 ```
-The initialization of the container will take about 4 minutes. In case of a misconfiguration with the access token, the runner will tell you there is an error with the GitHub authentication.
+La inicialización del contenedor tomará aproximadamente 4 minutos. En caso de un error de configuración con el access token, el runner lo notificará como un error de autenticación de GitHub.
 
 ## Workflow
-To trigger the workflow you need to push changes in the **/src** folder. Our recommendation is to change only the LED blink frequency, and keep the code as it is. Change the define DELAY in line 7 of **/src/main.c** to a noticeable value you can distinguish in the LED on the board. For example, toggle between 200 and 2000 ms of DELAY. After pushing the changes, the code will compile, test and upload to the board automatically. This is the advantage of DevOps, saving time and being less error prone.
+Para desencadenar el workflow se necesita pushear cambios en la carpeta **/src**. Nuestra recomendación es cambiar únicamente la frecuencia de parpadeo del LED, y dejar el resto del código como está. Cambie el define DELAY de la línea 7 de **/src/main.c** a un valor que pueda distinguir fácilmente en el parpadeo del LED de la placa. Por ejemplo, alterne entre 200 y 2000 ms de DELAY. Después de pushear los cambios, el código va a compilarse, testearse y cargarse en la placa automáticamente. Esta es la ventaja de DevOps, ahorrar tiempo y evitar cometer errores.
 
-## References
+## Referencias
 - [Docker](https://www.docker.com)
 - [PlatformIO](https://platformio.org)
