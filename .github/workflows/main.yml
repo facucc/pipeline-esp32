@@ -38,11 +38,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install platformio
           pip install PyGithub
-
+      - name: unit test
+        run: |
+          pio test --environment nodemcu-32s
       # Runs a set of commands using the runners shell
       - name: Pio Run
         run: |
           pio run --target upload --upload-port /dev/ttyUSB0 --environment nodemcu-32s
-      - name: unit test
-        run: |
-          pio test --environment nodemcu-32s
