@@ -5,6 +5,6 @@
 #include <freertos/task.h>
 
 #define LED 2     // LED connected to GPIO2
-#define DELAY 3000 // milliseconds to delay blink
+#define DELAY 50 // milliseconds to delay blink
 
 void blink_led(uint8_t led, uint16_t delay);
