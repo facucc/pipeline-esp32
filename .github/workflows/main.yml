@@ -9,6 +9,8 @@ on:
     branches: [ "main" ]
     paths:
       - 'src'
+      - 'include'
+      - 'test'
   #pull_request:
   #  branches: [ "main" ]
 
