@@ -1,10 +1,4 @@
-#include <driver/gpio.h>
-// Include FreeRTOS for delay
-#include <freertos/FreeRTOS.h>
-#include <freertos/task.h>
-
-#define LED 2     // LED connected to GPIO2
-#define DELAY 100 // milliseconds to delay blink
+#include "blink.h"
 
 int app_main()
 {
@@ -19,11 +13,7 @@ int app_main()
 
     // Main loop
     // TEST WORKFLOW2
-    while (true)
-    {
-        gpio_set_level(LED, 0);
-        vTaskDelay(pdMS_TO_TICKS(DELAY));
-        gpio_set_level(LED, 1);
-        vTaskDelay(pdMS_TO_TICKS(DELAY));
-    }
+    blink_led(LED, DELAY);
+
+    return 0;
 }
