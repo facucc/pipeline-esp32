@@ -43,3 +43,6 @@ jobs:
       - name: Pio Run
         run: |
           pio run --target upload --upload-port /dev/ttyUSB0 --environment nodemcu-32s
+      - name: unit test
+        run: |
+          pio test --environment nodemcu-32s
