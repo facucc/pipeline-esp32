@@ -8,7 +8,9 @@ void test_IgnoredTest(void)
 
 void test_blink_led(void)
 {
-    TEST_ASSERT_GREATER_THAN(100, DELAY);
+  //Test if DELAY value is between 50 and 5000 ms
+  TEST_ASSERT_GREATER_OR_EQUAL(50, DELAY);
+  TEST_ASSERT_LESS_OR_EQUAL(5000, DELAY);
 }
 int runUnityTests(void)
 {
