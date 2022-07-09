@@ -45,7 +45,11 @@ sudo docker-compose up
 La inicialización del contenedor tomará aproximadamente 4 minutos. En caso de un error de configuración con el access token, el runner lo notificará como un error de autenticación de GitHub.
 
 ## Workflow
-Para desencadenar el workflow se necesita pushear cambios en la carpeta **/src**. Nuestra recomendación es cambiar únicamente la frecuencia de parpadeo del LED, y dejar el resto del código como está. Cambie el define DELAY de la línea 7 de **/src/main.c** a un valor que pueda distinguir fácilmente en el parpadeo del LED de la placa. Por ejemplo, alterne entre 200 y 2000 ms de DELAY. Después de pushear los cambios, el código va a compilarse, testearse y cargarse en la placa automáticamente. Esta es la ventaja de DevOps, ahorrar tiempo y evitar cometer errores.
+Para desencadenar el workflow se necesita pushear cambios en las carpetas: **/src/**, **/include/** y **/test/**. Nuestra recomendación es cambiar únicamente la frecuencia de parpadeo del LED, y dejar el resto del código como está. Cambie el define DELAY de la línea 7 de **/include/blink.h** a un valor que pueda distinguir fácilmente en el parpadeo del LED de la placa. Por ejemplo, alterne entre 200 y 2000 ms de DELAY. Después de pushear los cambios, el código va a compilarse, testearse y cargarse en la placa automáticamente. Esta es la ventaja de DevOps, ahorrar tiempo y evitar cometer errores.
+
+### Tests
+Hay 2 tests simples que se realizan antes de cargar el código a la placa. El primero es chequear si el valor de DELAY es mayor o igual a 50 ms, y el segundo es si el valor de DELAY es menor o igual a 5000 ms.
+Si se elije un valor fuera del **rango válido de DELAY (50 - 5000ms)**, los tests fallarán y **el código no se cargará en la placa**, simulando una prevención de posibles daños.
 
 ## Referencias
 - [Docker](https://www.docker.com)

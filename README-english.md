@@ -45,8 +45,13 @@ sudo docker-compose up
 The initialization of the container will take about 4 minutes. In case of a misconfiguration with the access token, the runner will tell you there is an error with the GitHub authentication.
 
 ## Workflow
-To trigger the workflow you need to push changes in the **/src** folder. Our recommendation is to change only the LED blink frequency, and keep the code as it is. Change the define DELAY in line 7 of **/src/main.c** to a noticeable value you can distinguish in the LED on the board. For example, toggle between 200 and 2000 ms of DELAY. After pushing the changes, the code will compile, test and upload to the board automatically. This is the advantage of DevOps, saving time and being less error prone.
+To trigger the workflow you need to push changes in the folders: **/src/**, **/include/** and **/test/**. Our recommendation is to change only the LED blink frequency, and keep the code as it is. Change the define DELAY in line 7 of **/include/blink.h** to a noticeable value you can distinguish in the LED on the board. For example, toggle between 200 and 2000 ms of DELAY. After pushing the changes, the code will compile, test and upload to the board automatically. This is the advantage of DevOps, saving time and being less error prone.
+
+### Tests
+There are 2 simple tests made before uploading the code to the board. First test is if the DELAY value is greater or equal than 50 ms, and the second tests if the DELAY value is less or equal than 5000 ms.
+If you choose a value outside the **valid DELAY range (50 - 5000 ms)**, the tests will fail and **the code will not be uploaded to the board**, simulating a possible damage prevention.
 
 ## References
 - [Docker](https://www.docker.com)
+- [TCardonne GitHub Runner](https://registry.hub.docker.com/r/tcardonne/github-runner)
 - [PlatformIO](https://platformio.org)
