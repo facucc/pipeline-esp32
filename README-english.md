@@ -23,9 +23,16 @@ Create a file called ".env" in your repository root folder. Note that this file 
 RUNNER_REPOSITORY_URL=URL of your Forked Repository
 GITHUB_ACCESS_TOKEN=Your Token
 ```
-To create a new GitHub Access Token, go to Settings, Developer Settings (at the bottom), Personal Access Tokens, and click on **Generate new token**. You will get a long sequence of characters, copy it and paste it on the .env file as indicated before. You won't be able to retrieve this token, so if you lose your .env file and need the token again, you will need to create a new one and replace it.
 
 ![DevSettings](/img/GithubDevSettings.jpg)
+
+To create a new GitHub Access Token, go to Settings, Developer Settings (at the bottom), Personal Access Tokens, and click on **Generate new token**. You will get a long sequence of characters, copy it and paste it on the .env file as indicated before. You won't be able to retrieve this token, so if you lose your .env file and need the token again, you will need to create a new one and replace it.
+
+While generating a new token, you have to choose which permissions to give to the token, make sure to check:
+- **repo**
+- **workflow**
+
+![AccessToken](/img/GithubAccessToken.jpg)
 
 ### ESP32 USB Connection
 To upload code to the ESP32 board consider:
