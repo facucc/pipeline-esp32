@@ -82,6 +82,6 @@ jobs:
         run: |
           pio test --environment nodemcu-32s
       # Runs a set of commands using the runners shell
-      - name: Pio Run
+      - name: Upload to board
         run: |
           pio run --target upload --upload-port /dev/ttyUSB0 --environment nodemcu-32s
