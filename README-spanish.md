@@ -23,9 +23,15 @@ Cree un archivo llamado ".env" en la carpeta raíz de su repositorio. Nótese qu
 RUNNER_REPOSITORY_URL=URL of your Forked Repository
 GITHUB_ACCESS_TOKEN=Your Token
 ```
+![DevSettings](/img/GithubDevSettings.jpg)
+
 Para crear un nuevo GitHub Access Token, vaya a Ajustes, Ajustes de Desarrollador (Developer Settings, abajo), Personal Access Tokens, y clickee en **Generar nuevo token**. Obtendrá una secuencia larga de caracteres, cópiela y péguela en el archivo .env en los campos indicados previamente. No podrá recuperar este token, así que si pierde su archivo .env y necesita el token, necesitará crear un nuevo token y reemplazarlo.
 
-![DevSettings](/img/GithubDevSettings.jpg)
+Al generar un nuevo token, debe elegir que permisos asignarle, asegúrese de tildar los siguientes:
+- **repo**
+- **workflow**
+
+![AccessToken](/img/GithubAccessToken.jpg)
 
 ### ESP32 USB Connection
 Para cargar código al ESP32 considere:
@@ -53,4 +59,5 @@ Si se elije un valor fuera del **rango válido de DELAY (50 - 5000ms)**, los tes
 
 ## Referencias
 - [Docker](https://www.docker.com)
+- [TCardonne GitHub Runner](https://registry.hub.docker.com/r/tcardonne/github-runner)
 - [PlatformIO](https://platformio.org)
