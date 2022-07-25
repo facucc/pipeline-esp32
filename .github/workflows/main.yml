@@ -59,6 +59,7 @@ jobs:
     #Add comment for test
   # This workflow contains a single job called "build"
   build:
+    needs: analyze
     # The type of runner that the job will run on
     #runs-on: ubuntu-latest
     runs-on: self-hosted
@@ -78,10 +79,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install platformio
           pip install PyGithub
-      - name: unit test
-        run: |
-          pio test --environment nodemcu-32s
-      # Runs a set of commands using the runners shell
+          
       - name: Upload to board
         run: |
           pio run --target upload --upload-port /dev/ttyUSB0 --environment nodemcu-32s
