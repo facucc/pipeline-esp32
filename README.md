@@ -17,7 +17,7 @@ sudo apt install docker-compose
 Para Windows (u otro SO) por favor diríjase a [Docker Documentation](https://docs.docker.com/desktop/windows/install).
 
 ### Credenciales
-Por motivos de seguridad debe crear un GitHub Access Token, el cual le da permisos sobre su cuenta de GutHub para permitir que un self-hosted runner pueda ejecutar las tareas (jobs) del pipeline.
+Por motivos de seguridad debe crear un GitHub Access Token, el cual le da permisos sobre su cuenta de GitHub para permitir que un self-hosted runner pueda ejecutar las tareas (jobs) del pipeline.
 Cree un archivo llamado ".env" en la carpeta raíz de su repositorio. Nótese que este archivo está incluido en el .gitignore, ya que sus credenciales no se deben compartir. En este archivo debe agregar:
 ```
 RUNNER_REPOSITORY_URL=URL of your Forked Repository
