@@ -1,19 +1,18 @@
-#include "blink.h"
+#include "common.h"
 
 int app_main()
 {
-    // Configure pin
-    gpio_config_t io_conf;
-    io_conf.intr_type = GPIO_PIN_INTR_DISABLE;
-    io_conf.mode = GPIO_MODE_OUTPUT;
-    io_conf.pin_bit_mask = (1ULL << LED);
-    io_conf.pull_down_en = 0;
-    io_conf.pull_up_en = 0;
-    gpio_config(&io_conf);
 
-    // Main loop
-    // TEST WORKFLOW2
-    blink_led(LED, DELAY);
+    setup_pins();
+    vTaskDisplayTemperature();
 
+/*
+    xTaskCreate(vTaskGetTemperature,(const char *)"Sensor", (unsigned short) STACK_SIZE, NULL, 1, NULL); //Priority 1    
+    xTaskCreate(vTaskDisplayTemperature,(const char *)"Display", (unsigned short) STACK_SIZE, NULL, 1, NULL); //Priority 1
+    
+    vTaskStartScheduler(); //NO FUNCIONA
+
+*/
+    
     return 0;
 }
