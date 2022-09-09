@@ -11,8 +11,8 @@ void test_IgnoredTest(void)
 void test_blink_led(void)
 {
   //Test if DELAY value is between 5 and 30 minutes.
-  TEST_ASSERT_GREATER_OR_EQUAL(50, DELAY);
-  TEST_ASSERT_LESS_OR_EQUAL(5000, DELAY);
+  TEST_ASSERT_GREATER_OR_EQUAL(300000, DELAY);
+  TEST_ASSERT_LESS_OR_EQUAL(1800000, DELAY);
 }
 int runUnityTests(void)
 {
