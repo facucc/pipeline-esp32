@@ -9,12 +9,4 @@ void setup_pins()
     io_conf.pull_down_en = GPIO_PULLDOWN_DISABLE;
     io_conf.pull_up_en = GPIO_PULLUP_DISABLE;
     gpio_config(&io_conf);
-
-    gpio_config_t input_conf;
-    input_conf.intr_type = GPIO_PIN_INTR_DISABLE;
-    input_conf.mode = GPIO_MODE_INPUT;
-    input_conf.pin_bit_mask = (1ULL << 16); //GPIO16 = RX2
-    input_conf.pull_down_en = GPIO_PULLDOWN_ENABLE;
-    input_conf.pull_up_en = GPIO_PULLUP_DISABLE;
-    gpio_config(&input_conf);
 }
