@@ -6,7 +6,7 @@ services:
     container_name: runner-self-hosted
     privileged: true
     environment:
-      RUNNER_NAME: "my-runner"
+      RUNNER_NAME: "runner-pipeline"
       RUNNER_REPOSITORY_URL: ${RUNNER_REPOSITORY_URL}
       #RUNNER_ORGANIZATION_URL: ${RUNNER_ORGANIZATION_URL}
       GITHUB_ACCESS_TOKEN: ${GITHUB_ACCESS_TOKEN}
