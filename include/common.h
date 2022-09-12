@@ -16,6 +16,7 @@
 #define LENGTH_PINS 7
 #define MAX_TEMP 30
 #define SAMPLING_TIME 30000
+#define MAX_TEMP_DISPLAY 15
 #define LOW 0
 
 

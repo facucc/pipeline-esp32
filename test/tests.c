@@ -1,5 +1,5 @@
 #include <unity.h>
-#include "../include/common.h"
+#include "common.h"
 
 #define MAX_TEMP_DISPLAY 15
 #define MIN_TEMP_DISPLAY 0
